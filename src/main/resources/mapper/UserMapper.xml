@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jgs.collegeexamsystemback.mapper.UserMapper">
+
+    <resultMap id="BaseResultMap" type="com.jgs.collegeexamsystemback.pojo.User">
+            <id property="userId" column="user_id" jdbcType="OTHER"/>
+            <result property="username" column="username" jdbcType="VARCHAR"/>
+            <result property="password" column="password" jdbcType="VARCHAR"/>
+            <result property="nickname" column="nickname" jdbcType="VARCHAR"/>
+            <result property="telephone" column="telephone" jdbcType="VARCHAR"/>
+            <result property="qq" column="qq" jdbcType="VARCHAR"/>
+            <result property="gender" column="gender" jdbcType="OTHER"/>
+            <result property="teacherStudentNo" column="teacher_student_no" jdbcType="INTEGER"/>
+            <result property="roles" column="roles" jdbcType="OTHER"/>
+            <result property="gitee" column="gitee" jdbcType="VARCHAR"/>
+    </resultMap>
+   <select id="selectPermsByUserId" resultType="java.lang.String">
+       SELECT
+           roles
+       FROM
+           user
+       WHERE
+           user_id = #{userId}
+   </select>
+    <sql id="Base_Column_List">
+        user_id,username,password,
+        nickname,telphone,qq,
+        gender,teacher_student_no,gitee,roles
+    </sql>
+</mapper>

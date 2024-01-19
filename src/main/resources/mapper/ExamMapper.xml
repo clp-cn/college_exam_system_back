@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jgs.collegeexamsystemback.mapper.ExamMapper">
+
+    <resultMap id="BaseResultMap" type="com.jgs.collegeexamsystemback.pojo.Exam">
+        <id property="id" column="id" jdbcType="OTHER"/>
+        <result property="teachBuilding" column="teach_building" jdbcType="VARCHAR"/>
+        <result property="classRoom" column="class_room" jdbcType="VARCHAR"/>
+        <result property="invigilator" column="invigilator" jdbcType="INTEGER"/>
+        <result property="examSubject" column="exam_subject" jdbcType="VARCHAR"/>
+        <result property="examStart" column="exam_start" jdbcType="OTHER"/>
+        <result property="examEnd" column="exam_end" jdbcType="OTHER"/>
+        <result property="examClass" column="exam_class" jdbcType="VARCHAR"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        id,teach_building,class_room,invigilator,exam_subject,exam_start,exam_end,exam_class
+    </sql>
+</mapper>
